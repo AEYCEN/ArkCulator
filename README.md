@@ -16,6 +16,7 @@
 <p style="font-size: 17px">Structure destruction calculator for Ark: Survival Evolved and Ark: Survival Ascended.</p>
 
 ![GitHub Release](https://img.shields.io/github/v/release/AEYCEN/arkCulator)
+![GitHub Downloads (all releases)](https://img.shields.io/github/downloads/AEYCEN/ArkCulator/total)
 ![GitHub License](https://img.shields.io/github/license/AEYCEN/arkCulator)
 
 ## 💪🏼 Features
@@ -23,19 +24,21 @@
 Some of the features the calculator provides are:
 
 * 💥 **Precise calculation**: Instantly calculates how many explosives or shots are needed to destroy any structure based on its HP, material and weapon type
+* 📊 **Supports multiple weapons & materials**: Includes C4, Rocket Launcher, Tek Rifle, Cannon, Grenades, Tek Grenades and Catapult; calculates for Wood, Stone, Metal and Tek structures
 * 🔢 **Detailed resource cost**: Shows the exact resource cost to craft the required ammo
-* ⚙️ **Automatic 6x cave damage option**: Adjusts all damage values when the structure is inside a cave
-* 📊 **Supports multiple weapons & materials**: Includes C4, Rocket Launcher, Tek Rifle, Cannon, Grenades and Catapult; calculates for Wood, Stone, Metal and Tek structures
+* ✨ **Considers tool quality**: For weapons that can exist in a better quality, the respective percentage value can also be specified
+* ⚙️ **6x cave damage option**: Adjusts all damage values when the structure is inside a cave
 * 🪶 **Lightweight console application**: Runs directly from terminal, fast and minimal
 * 🎨 **Colored & formatted output**: Uses ANSI codes for better readability in terminal (bold, colors etc.)
-* 🦖 **Customized version for Beginners Next Gen**: Dedicated `-bng` version customized for the most popular ASE Beginner Server
+* 🦖 **Customized mode for Beginners Next Gen**: Integrated BNG mode customized for the most popular ASE Beginner Server
 
 
 ### ❔ Detailed Description
 
 This calculator is used to determine the amount of ammunition and cost of resources required to destroy structures in Ark: Survival Evolved and Ark: Survival Ascended.
 The program allows you to enter the type of weapon, the HP and material of the structure and the presence of 6x cave damage.
-It then calculates the amount of explosives/ammunition needed and displays the resource cost of crafting the ammo.
+It then calculates the amount of explosives/ammunition needed and displays the resource cost of crafting the ammo. Integrated
+adjusted BNG mode for the ASE "Beginners Next Gen" servers.
 
 
 ## 🛠️ Installation
@@ -56,17 +59,35 @@ As I do not plan to pay for this, you will now have to endure this message and f
 
 ## 🚀 Usage
 
-The calculator will ask you a total of 4 questions in order to calculate the amount of ammunition you need to destroy a structure.
+The calculator will ask you questions in order to calculate the amount of ammunition you need to destroy a structure.
 Always confirm with `ENTER` after an input. After answering a question, your answer will be displayed in front of the next question.
 
-1. What weapon do you want to destroy with?
+1. In what mode do yuo want to use ArkCulator?
 
-   `Enter weapon [1(C4)/2(Rocket Launcher)/3(Tek Rifle)/4(Cannon)/5(Grenade)/6(Catapult)]`
+   `Enter calculator mode [ENTER for normal / bng for Beginners Next Gen]`
 
-    Simply enter the respective number of the weapon (e.g. `3` for the Tek Rifle)
+   Simply press the `ENTER` key for the normal mode or type `bng` for the Beginners Next Gen servers adjusted mode.   
 
 
-2. What type of Structure you want to destroy?
+2. What weapon do you want to destroy with?
+
+   ```
+   Enter weapon:
+      1 - C4
+      2 - Cannon
+      3 - Catapult
+      4 - Grenade
+      5 - Rocket Launcher
+      6 - Tek Grenade
+      7 - Tek Rifle
+   ```
+
+    Enter the respective number or the name of the weapon (e.g. `4` or `grenade` for grenades)
+
+> ℹ️ If you selected the tek rifle, it will proceed to ask you of what quality it is. Questioned is the percentage of damage. For a normal tek rifle just enter `100`.
+
+
+3. What type of Structure you want to destroy?
 
    `Enter material of structure [wood/stone/metal/tek]`
 
@@ -75,14 +96,14 @@ Always confirm with `ENTER` after an input. After answering a question, your ans
 > ℹ️ If the selected structure type is indestructible by the selected weapon, you will receive a message before you can make any further entries.
 
 
-3. How many HP has this structure right now?
+4. How many HP has this structure right now?
 
    `Enter HP of structure`
 
-    A number between 1 and 100'000
+    A number between 1 and 250'000
 
 
-4. Is the structure you want to attack in range of the 6x cave damage multiplier?
+5. Is the structure you want to attack in range of the 6x cave damage multiplier?
 
    `Cave damage? [yes/no]`
 
@@ -96,17 +117,17 @@ Now you will see how much ammunition you need to destroy the structure with the 
 In addition, you will see what production costs you can expect in order to produce the specified amount of ammunition:
 ```
 Resources needed to craft:
-Gunpowder: 390
-Fiber: 195
-Hide: 65
-Metal: 26
-Oil: 52
-Stone: 260
+390 Gunpowder
+195 Fiber
+65 Hide
+26 Metal
+52 Oil
+260 Stone
 ```
 
-The process then starts all over again. The first question is asked again directly for the next calculation.
+The process then starts at the weapon question again. It will be asked again directly for the next calculation.
 
-You can end the application with the key combination `Ctrl+C` or just by simply closing the window.
+You can end the application with the key combination `Ctrl+C` or just by closing the window.
 
 
 ## 🪲 Troubleshooting
@@ -116,7 +137,7 @@ You can end the application with the key combination `Ctrl+C` or just by simply 
 
 ## 🔰 Version
 
-This README file is associated with ArkCulator `v5.2 (11.07.25)`
+This README file is associated with ArkCulator `v5.3 (15.07.25)`
 
 
 ### ⏫ Upgrading the Version
@@ -127,6 +148,12 @@ Notice that you will be prompted by the Defender SmartScreen again the first tim
 
 ### 📑 Changelog
 
+    v5.3    - added new weapon type: tek grenade
+            - support for every tek rifle quality
+            - integrated Beginners Next Gen mode
+            - added ability to answer with weapon name instead of just number
+            - increased max stucture HP input to 250'000
+   
     v5.2    - finished executable release
             - styling improvements
             - added tek rifle element cost calculation
@@ -149,7 +176,7 @@ Notice that you will be prompted by the Defender SmartScreen again the first tim
 
     v2.0    - added new weapon types: cannon, grenade and catapult 
 
-    v1.0    - initial release as a c++ console application
+    v1.0    - initial c++ console application release
 
 
 ## 💫 Contact
