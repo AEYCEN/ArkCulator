@@ -1,69 +1,164 @@
-function calculateDamage(type, material) {
-    const table = {
-        1: {Wood:11813, Stone:99999, Metal:3544, Tek:788},
-        2: {Wood:7350, Stone:99999, Metal:2205, Tek:596},
-        3: {Wood:26800, Stone:14700, Metal:1450, Tek:9250},
-        4: {Wood:99999, Stone:3446, Metal:355, Tek:40},
-        5: {Wood:788, Stone:1838, Metal:237, Tek:53},
-        6: {Wood:15750, Stone:700, Metal:0, Tek:0}
-    };
-    return table[type][material] || 0;
+const damageTable = {
+    c4: {wood:11813, stone:99999, metal:3544, tek:788},
+    cannon: {wood:99999, stone:3446, metal:355, tek:40},
+    catapult: {wood:15750, stone:700, metal:0, tek:0},
+    grenade: {wood:788, stone:1838, metal:237, tek:53},
+    rocketLauncher: {wood:7350, stone:99999, metal:2205, tek:596},
+    tekGrenade: {wood:1115, stone:612, metal:59, tek:385},
+    tekRifle: {wood:536, stone:294, metal:29, tek:185}
 }
 
-function calculateCost(type, amount) {
-    let costs = {}
-    switch (parseInt(type)) {
-        case 1:
-            costs = {Gunpowder:60, Crystal:10, Cement:5, Fiber:50, Hide:5, Polymer:5, Electronics:5}
-            break
-        case 2:
-            costs = {Gunpowder:40, Crystal:10, Cement:20, Polymer:10, Metal:12}
-            break
-        case 4:
-            costs = {Metal:80, Gunpowder:30, Cement:20, Obsidian:4}
-            break
-        case 5:
-            costs = {Fiber:15, Stone:20, Gunpowder:30, Hide:5, Metal:2, Oil:4}
-            break
-        case 6:
-            costs = {Stone:30, Metal:3}
-            break
-        default:
-            costs = {}
-    }
-
-    for (let key in costs) {
-        costs[key] *= amount
-    }
-    return costs
+const craftingCosts = {
+    c4: (bng) => ({
+        gunpowder: bng ? 300 : 60,
+        crystal: bng ? 50 : 10,
+        cementingPaste: bng ? 25 : 5,
+        fiber: bng ? 250 : 50,
+        hide: bng ? 25 : 5,
+        polymer: bng ? 25 : 5,
+        electronics: bng ? 25 : 5
+    }),
+    cannon: () => ({
+        metalIngot: 80,
+        gunpowder: 30,
+        cementingPaste: 20,
+        obsidian: 4
+    }),
+    catapult: () => ({
+        stone: 30,
+        metalIngot: 3
+    }),
+    grenade: () => ({
+        fiber: 15,
+        stone: 20,
+        gunpowder: 30,
+        hide: 5,
+        metalIngot: 2,
+        oil: 4
+    }),
+    rocketLauncher: () => ({
+        gunpowder: 40,
+        crystal: 10,
+        cementingPaste: 20,
+        polymer: 10,
+        metalIngot: 12
+    }),
+    tekGrenade: () => ({
+        element: 1,
+        crystal: 40,
+        cementingPaste: 10,
+        metalIngot: 30,
+        polymer: 30,
+        gunpowder: 60
+    }),
+    tekRifle: () => ({
+        element: 0.02
+    })
 }
 
 function calculate() {
-    const type = document.getElementById('weapon').value
-    const material = document.getElementById('material').value
-    const hp = parseInt(document.getElementById('hp').value)
-    const cave = document.getElementById('cave').checked
+    // Calculation
+    const weapon = document.querySelector('input[name="weapon"]:checked').value
+    const structure = document.querySelector('input[name="structureType"]:checked').value
+    const hp = parseFloat(document.getElementById('structure-hp').value) || 0
+    const cave = document.querySelector('input[name="caveDamage"]:checked').value === "caveDamageYes"
+    let quality = parseFloat(document.getElementById('tek-rifle-quality').value) || 100
 
-    if (isNaN(hp) || hp < 1 || hp > 100000) {
-        document.getElementById('output').innerHTML = '<span style="color:red">Invalid HP input. Please enter a number between 1 and 100000.</span>'
+    let damage = damageTable[weapon][structure]
+    if (weapon === "tekRifle") {
+        if (quality < 100) quality = 100
+        if (quality > 200) quality = 200
+        damage *= quality / 100.0
+    }
+
+    if (damage <= 0) {
+        console.info(`${weapon} cannot destroy ${structure}.`)
+        updateResourceOutput({})
+        
+        document.getElementById('output-amount-indestructible').style.display = 'block'
+        document.getElementById('resource-indestructible').style.display = 'flex'
+        document.getElementById('output-amount-group').style.display = 'none'
         return
     }
 
-    let damage = calculateDamage(type, material)
-    if (damage === 0) {
-        document.getElementById('output').innerHTML = 'This structure is indestructible with this weapon.'
-        return
-    }
+    document.getElementById('output-amount-indestructible').style.display = 'none'
+    document.getElementById('resource-indestructible').style.display = 'none'
+    document.getElementById('output-amount-group').style.display = 'block'
 
     if (cave) damage *= 6
 
     const amount = Math.ceil(hp / damage)
-    const costs = calculateCost(type, amount)
 
-    let output = `<b>Amount needed to destroy: ${amount}</b><br><br>Resources needed to craft:`
-    for (let resource in costs) {
-        output += `<div class="resource">${resource}: ${costs[resource]}</div>`
+    // Calculate resource cost
+    const bngMode = document.getElementById('bng-mode').checked
+
+    let baseCostFunc = craftingCosts[weapon]
+    if (!baseCostFunc) {
+        updateResourceOutput({})
+        return
     }
 
-    document.getElementById('output').innerHTML = output
+    let cost = baseCostFunc(bngMode)
+    let costAmount = weapon === 'tekGrenade' ? Math.ceil(amount / 3) : amount
+    const result = {}
+    for (const [res, val] of Object.entries(cost)) {
+        const key = res.replace(/([A-Z])/g, '-$1').toLowerCase()
+        result[key] = Math.ceil(val * (res === "element" ? costAmount : costAmount))
+    }
+
+    // Output
+    console.info(`Weapon: ${weapon} | Structure: ${structure} | HP: ${hp} | Cave 6x: ${cave ? 'Yes' : 'No'} | Damage per hit: ${damage.toFixed(0)} | => ${amount} shots`)
+
+    updateResourceOutput(result)
+    document.getElementById('output-amount').textContent = amount.toString()
+    document.getElementById('output-damage').textContent = damage.toFixed(0).toString()
 }
+
+function updateResourceOutput(resourceMap) {
+    const resourceIds = [
+        'cementing-paste', 'crystal', 'electronics', 'element', 'fiber',
+        'gunpowder', 'hide', 'metal-ingot', 'obsidian', 'oil',
+        'polymer', 'stone'
+    ]
+
+    for (const id of resourceIds) {
+        const col = document.getElementById(`resource-${id}`)
+        const h3 = col.querySelector('h3')
+        const mapKey = id.replace(/-/g, '')
+        const value = resourceMap[mapKey] ?? 0
+
+        if (value > 0) {
+            h3.textContent = value
+            col.classList.remove('d-none')
+        } else {
+            h3.textContent = ''
+            col.classList.add('d-none')
+        }
+    }
+}
+
+
+function toggleTekRifleFields() {
+    const isSelected = tekRifleRadio.checked
+    tekRifleLabel.style.display = isSelected ? "none" : "block"
+    tekRifleQuality.style.display = isSelected ? "flex" : "none"
+}
+
+// Tek rifle quality swap
+const tekRifleRadio = document.getElementById("weapon-tek-rifle")
+const tekRifleLabel = document.getElementById("tek-rifle-label")
+const tekRifleQuality = document.getElementById("tek-rifle-quality-group")
+
+toggleTekRifleFields()
+tekRifleRadio.addEventListener("change", toggleTekRifleFields)
+
+document.querySelectorAll('input[name="weapon"]').forEach((el) => {
+    el.addEventListener("change", toggleTekRifleFields)
+})
+
+// Call calculate
+document.querySelectorAll('input').forEach((el) => {
+    el.addEventListener("change", calculate)
+})
+
+calculate()

@@ -15,11 +15,7 @@
 
 <p style="font-size: 17px">Structure destruction calculator for Ark: Survival Evolved and Ark: Survival Ascended.</p>
 
-![GitHub Release](https://img.shields.io/github/v/release/AEYCEN/arkCulator)
-![GitHub Downloads (all releases)](https://img.shields.io/github/downloads/AEYCEN/ArkCulator/total)
-![GitHub License](https://img.shields.io/github/license/AEYCEN/arkCulator)
-
-## 💪🏼 Features
+# 💪🏼 Features
 
 Some of the features the calculator provides are:
 
@@ -28,17 +24,32 @@ Some of the features the calculator provides are:
 * 🔢 **Detailed resource cost**: Shows the exact resource cost to craft the required ammo
 * ✨ **Considers tool quality**: For weapons that can exist in a better quality, the respective percentage value can also be specified
 * ⚙️ **6x cave damage option**: Adjusts all damage values when the structure is inside a cave
-* 🪶 **Lightweight console application**: Runs directly from terminal, fast and minimal
 * 🎨 **Colored & formatted output**: Uses ANSI codes for better readability in terminal (bold, colors etc.)
 * 🦖 **Customized mode for Beginners Next Gen**: Integrated BNG mode customized for the most popular ASE Beginner Server
+* 🪶 **Lightweight console application**: Runs directly from terminal, fast and minimal
+
+# 🌐 ArkCulator Online
+
+![Website](https://img.shields.io/website?url=https%3A%2F%2Faeycen.github.io%2FArkCulator%2F)
+![GitHub License](https://img.shields.io/github/license/AEYCEN/arkCulator)
 
 
-### ❔ Detailed Description
+ArkCulator Online is the web version of ArkCulator. It is hosted on GitHub Pages and can be directly accessed via:
 
-This calculator is used to determine the amount of ammunition and cost of resources required to destroy structures in Ark: Survival Evolved and Ark: Survival Ascended.
-The program allows you to enter the type of weapon, the HP and material of the structure and the presence of 6x cave damage.
-It then calculates the amount of explosives/ammunition needed and displays the resource cost of crafting the ammo. Integrated
-adjusted BNG mode for the ASE "Beginners Next Gen" servers.
+- [aeycen.github.io/ArkCulator](https://aeycen.github.io/ArkCulator/)
+
+The current ArkCulator Online version is `web-v1.0 (17.07.2025)`
+
+### 📑 Changelog
+
+    web-v1.0    - initial release
+
+
+# 📟 ArkCulator
+
+![GitHub Release](https://img.shields.io/github/v/release/AEYCEN/arkCulator)
+![GitHub Downloads (all releases)](https://img.shields.io/github/downloads/AEYCEN/ArkCulator/total)
+![GitHub License](https://img.shields.io/github/license/AEYCEN/arkCulator)
 
 
 ## 🛠️ Installation
@@ -51,7 +62,8 @@ As I do not plan to pay for this, you will now have to endure this message and f
 
 ![WinDefenderSmartScreenMessage](img/smartScreenMessage.png)
 
-> ℹ️ You are able to verify the source code of the executable inside the C++ file in the `cpp` folder.
+> [!TIP]
+> You are able to verify the source code of the executable inside the C++ file in the `cpp` folder.
 
 
 <a name="installation"></a>
@@ -84,7 +96,8 @@ Always confirm with `ENTER` after an input. After answering a question, your ans
 
     Enter the respective number or the name of the weapon (e.g. `4` or `grenade` for grenades)
 
-> ℹ️ If you selected the tek rifle, it will proceed to ask you of what quality it is. Questioned is the percentage of damage. For a normal tek rifle just enter `100`.
+> [!NOTE]
+> If you selected the tek rifle, it will proceed to ask you of what quality it is. Questioned is the percentage of damage. For a normal tek rifle just enter `100`.
 
 
 3. What type of Structure you want to destroy?
@@ -93,7 +106,8 @@ Always confirm with `ENTER` after an input. After answering a question, your ans
 
     You can either write the full word or just the first letter (e.g. `t` for tek)
 
-> ℹ️ If the selected structure type is indestructible by the selected weapon, you will receive a message before you can make any further entries.
+> [!NOTE]
+> If the selected structure type is indestructible by the selected weapon, you will receive a message before you can make any further entries.
 
 
 4. How many HP has this structure right now?
@@ -179,7 +193,7 @@ Notice that you will be prompted by the Defender SmartScreen again the first tim
     v1.0    - initial c++ console application release
 
 
-## 💫 Contact
+# 💫 Contact
 
 **Initial development, Conception and Idea**
 - TRAYVED (Discord: trayved)
@@ -190,7 +204,7 @@ Notice that you will be prompted by the Defender SmartScreen again the first tim
 Create an issue ticket on GitHub for bug reports and feature requests or join our [Discord server](https://discord.gg/N55gSQcVEC) on the `Tech-Support` channel for individual support.
 
 
-## 📜 License
+# 📜 License
 
 ArkCulator is licensed under the MIT licence. Please see the [license file](LICENSE) for more information.
 [tl;dr](https://www.tldrlegal.com/license/mit-license) you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
