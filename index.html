@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <title>ArkCulator &nbsp;ʙʏ ᴀᴇʏᴄᴇɴ</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Ark Survival Evolved Ark Survival Ascended Structure Damage Calculator" name="keywords">
+    <meta content="This calculator is used to calculate the cost and resources required to destroy structures in Ark: Survival Evolved. The program allows you to enter the type of weapon, the HP and material of the structure and the presence of 6x cave damage. It then calculates the amount of explosives needed and displays the resource cost of crafting the ammo." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/arkCulator.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand bg-body-tertiary navbar-dark sticky-top py-0 mb-4 text-center">
+        <div class="container-xxl">
+            <a href="index.html" class="navbar-brand d-flex align-items-center mx-3 my-1 text-nowrap">
+                <img src="img/ArkCulator-standalone.png" alt="AC" width="40" class="me-3">
+                <div class="d-flex align-items-baseline">
+                    <span class="fs-3 fw-bold pe-2">
+                        <span style="color: var(--ac-ark);">Ark</span><span style="color: var(--ac-culator);">Culator</span> Online
+                    </span>
+                <span class="text-secondary small align-baseline ps-2">by AEYCEN</span>
+                </div>
+            </a>
+            <button type="button" class="btn btn-outline-primary m-2" onclick="window.open('https://github.com/AEYCEN/ArkCulator/releases')">
+                <i class="fab fa-github fa-fw me-1"></i>
+                Download ArkCulator v5.3
+            </button>
+            <span class="text-secondary">web-v1.0 (17.07.2025)</span>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container-xxl position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <div class="w-100">
+            <!-- Weapon Start -->
+            <div class="card bg-secondary-subtle border-0 p-4 mb-3">
+                <div class="row g-4">
+                    <div class="col-auto">
+                        <input type="radio" name="weapon" id="weapon-c4" value="c4" checked>
+                        <label for="weapon-c4" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                            <img src="img/weapon/228px-C4_Charge.webp" class="img-fluid mb-3 img-weapon" alt="C4">
+                            <p class="m-0 fs-5">C4</p>
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="radio" name="weapon" id="weapon-cannon" value="cannon">
+                        <label for="weapon-cannon" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                            <img src="img/weapon/228px-Cannon.webp" class="img-fluid mb-3 img-weapon" alt="Cannon">
+                            <p class="m-0 fs-5">Cannon</p>
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="radio" name="weapon" id="weapon-catapult" value="catapult">
+                        <label for="weapon-catapult" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                            <img src="img/weapon/228px-Catapult_Turret.webp" class="img-fluid mb-3 img-weapon" alt="Catapult">
+                            <p class="m-0 fs-5">Catapult</p>
+                        </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="radio" name="weapon" id="weapon-grenade" value="grenade">
+                        <label for="weapon-grenade" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                            <img src="img/weapon/228px-Grenade.webp" class="img-fluid mb-3 img-weapon" alt="Grenade">
+                            <p class="m-0 fs-5">Grenade</p>
+                        </label>
+                    </div>
+                    <div class="col-auto bng-hide">
+                        <input type="radio" name="weapon" id="weapon-rocket-launcher" value="rocketLauncher">
+                        <label for="weapon-rocket-launcher" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                            <img src="img/weapon/228px-Rocket_Launcher.webp" class="img-fluid mb-3 img-weapon" alt="Rocket Launcher">
+                            <p class="m-0 fs-5">Rocket Launcher</p>
+                        </label>
+                    </div>
+                    <div class="col-auto bng-hide">
+                        <input type="radio" name="weapon" id="weapon-tek-grenade" value="tekGrenade">
+                        <label for="weapon-tek-grenade" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                            <img src="img/weapon/228px-Tek_Grenade.webp" class="img-fluid mb-3 img-weapon" alt="Tek Grenade">
+                            <p class="m-0 fs-5">Tek Grenade</p>
+                        </label>
+                    </div>
+                    <div class="col-auto bng-hide">
+                        <input type="radio" name="weapon" id="weapon-tek-rifle" value="tekRifle">
+                        <label for="weapon-tek-rifle" class="card radio-card cursor-pointer" style="height: 198px">
+                            <div class="d-flex align-items-center flex-column p-4 pb-1">
+                                <img src="img/weapon/228px-Tek_Rifle.webp" class="img-fluid mb-3 img-weapon" alt="Tek Rifle">
+                                <p class="m-0 fs-5 pb-3" id="tek-rifle-label">Tek Rifle</p>
+                            </div>
+                            <div class="input-group" id="tek-rifle-quality-group" style="display: none; width: 151px !important; height: 50px !important;">
+                                <input type="number" class="form-control" aria-describedby="percent-addon" id="tek-rifle-quality" value="100.0">
+                                <span class="input-group-text" id="percent-addon">%</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Weapon End -->
+
+            <!-- Structure type Start -->
+            <div class="card bg-secondary-subtle border-0 p-4 mb-3">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <input type="radio" name="structureType" id="structure-type-wood" value="wood">
+                        <label for="structure-type-wood" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                            <img src="img/structure/228px-Wooden_Foundation.webp" class="img-fluid mb-3" width="100" alt="Wood">
+                            <p class="m-0 fs-5">Wood</p>
+                        </label>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <input type="radio" name="structureType" id="structure-type-stone" value="stone">
+                        <label for="structure-type-stone" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                            <img src="img/structure/228px-Stone_Foundation.webp" class="img-fluid mb-3" width="100" alt="Stone">
+                            <p class="m-0 fs-5">Stone</p>
+                        </label>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <input type="radio" name="structureType" id="structure-type-metal" value="metal" checked>
+                        <label for="structure-type-metal" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                            <img src="img/structure/228px-Metal_Foundation.webp" class="img-fluid mb-3" width="100" alt="Metal">
+                            <p class="m-0 fs-5">Metal</p>
+                        </label>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <input type="radio" name="structureType" id="structure-type-tek" value="tek">
+                        <label for="structure-type-tek" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                            <img src="img/structure/228px-Tek_Foundation.webp" class="img-fluid mb-3" width="100" alt="Tek">
+                            <p class="m-0 fs-5">Tek</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Structure type End -->
+
+            <!-- HP / Cave Start -->
+            <div class="row g-4">
+                <!-- Structure HP -->
+                <div class="col-6">
+                    <div class="card bg-secondary-subtle border-0 p-4 mb-3">
+                        <div class="card p-4">
+                            <div class="d-flex align-items-center gap-4">
+                                <img src="img/80px-Health.webp" class="img-fluid mx-4" width="60" alt="Wood">
+                                <label for="structure-hp" class="form-label text-nowrap mb-0 fs-5 me-4">Structure HP</label>
+                                <input type="number" class="form-control form-control-lg flex-grow-1" id="structure-hp" value="10000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cave Damage -->
+                <div class="col-6">
+                    <div class="card bg-secondary-subtle border-0 p-4 mb-3">
+                        <div class="card p-4">
+                            <div class="d-flex align-items-center gap-4">
+                                <img src="img/cave.png" class="img-fluid mx-4" width="60" alt="Cave">
+                                <span class="fs-5 mb-0 me-4">Inside of cave?</span>
+
+                                <div class="d-flex gap-2">
+                                    <input type="radio" id="cave-damage-yes" name="caveDamage" value="caveDamageYes" class="d-none">
+                                    <label for="cave-damage-yes" class="radio-card btn fs-5 py-2 px-4">
+                                        <i class="fa-solid fa-lg fa-check me-2 text-success"></i>
+                                        Yes
+                                    </label>
+
+                                    <input type="radio" id="cave-damage-no" name="caveDamage" value="caveDamageNo" class="d-none" checked>
+                                    <label for="cave-damage-no" class="radio-card btn fs-5 py-2 px-4">
+                                        <i class="fa-solid fa-lg fa-x me-2 text-danger"></i>
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HP / Cave End -->
+
+            <!-- OUTPUT Start -->
+            <div class="card p-4 bg-primary-subtle">
+                <div class="row gap-4">
+                    <div class="col-2">
+                        <div id="output-amount-group">
+                            <div class="d-flex align-items-center flex-column gap-1">
+                                <h1 id="output-amount"></h1>
+                                <p class="fs-5 mb-1">shots needed</p>
+                                <p class="text-muted mb-0">
+                                    (<span id="output-damage"></span> damage/shot)
+                                </p>
+                            </div>
+                        </div>
+                        <img src="img/228px-Spoiled_Meat.webp" class="img-fluid mx-auto" id="output-amount-indestructible" width="122" style="display: none;" alt="Indestructible">
+                    </div>
+                    <div class="col-auto pe-1" style="border-left: 1px solid var(--bs-border-color);"></div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-cementing-paste">
+                        <img src="img/resource/228px-Cementing_Paste.webp" class="img-fluid cursor-help mx-1" width="70" alt="Cementing Paste"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cementing Paste">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-crystal">
+                        <img src="img/resource/228px-Crystal.webp" class="img-fluid cursor-help mx-1" width="70" alt="Crystal"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Crystal">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-electronics">
+                        <img src="img/resource/228px-Electronics.webp" class="img-fluid cursor-help mx-1" width="70" alt="Electronics"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Electronics">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-element">
+                        <img src="img/resource/228px-Element.webp" class="img-fluid cursor-help mx-1" width="70" alt="Element"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Element">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-fiber">
+                        <img src="img/resource/228px-Fiber.webp" class="img-fluid cursor-help mx-1" width="70" alt="Fiber"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Fiber">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-gunpowder">
+                        <img src="img/resource/228px-Gunpowder.webp" class="img-fluid cursor-help mx-1" width="70" alt="Gunpowder"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Gunpowder">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-hide">
+                        <img src="img/resource/228px-Hide.webp" class="img-fluid cursor-help mx-1" width="70" alt="Hide"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Hide">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-metal-ingot">
+                        <img src="img/resource/228px-Metal_Ingot.webp" class="img-fluid cursor-help mx-1" width="70" alt="Metal Ingot"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Metal Ingot">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-obsidian">
+                        <img src="img/resource/228px-Obsidian.webp" class="img-fluid cursor-help mx-1" width="70" alt="Obsidian"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Obsidian">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-oil">
+                        <img src="img/resource/228px-Oil.webp" class="img-fluid cursor-help mx-1" width="70" alt="Oil"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Oil">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-polymer">
+                        <img src="img/resource/228px-Polymer.webp" class="img-fluid cursor-help mx-1" width="70" alt="Polymer"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="(Organic) Polymer">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-stone">
+                        <img src="img/resource/228px-Stone.webp" class="img-fluid cursor-help mx-1" width="70" alt="Stone"
+                             data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Stone">
+                        <h3 class="mb-0">3</h3>
+                    </div>
+                    <div class="col-auto ps-5 align-self-center" id="resource-indestructible" style="display: none;">
+                        <h4>The selected structure type is indestructible with this weapon :(</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- OUTPUT End -->
+
+            <!-- BNG Mode Start -->
+            <div class="d-flex justify-content-center">
+                <div class="form-check form-switch mt-3">
+                    <input class="form-check-input" type="checkbox" value="bngMode" id="bng-mode" switch>
+                    <label class="form-check-label" for="bng-mode">
+                        <i>Beginners Next Gen</i> server settings
+                    </label>
+                </div>
+            </div>
+            <!-- BNG Mode End -->
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-2 px-4">
+                <div class="rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 text-center text-sm-center">
+                            &copy; 2022-2025
+                            <a href="https://github.com/AEYCEN/ArkCulator">ArkCulator</a> by <a href="https://github.com/AEYCEN">AEYCEN</a> / TRAYVED &nbsp;|&nbsp; Better calc than guess.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="js/arkCulator.js"></script>
+</body>
+</html>
