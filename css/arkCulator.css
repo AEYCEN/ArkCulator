@@ -1,0 +1,36 @@
+.radio-card {
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    user-select: none;
+}
+
+input[type="radio"]:checked + .radio-card {
+    border-color: var(--bs-primary);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-help {
+    cursor: help;
+}
+
+.img-weapon {
+    width: 101px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary-subtle);
+}

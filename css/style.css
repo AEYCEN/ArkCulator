@@ -1,8 +1,12 @@
 /********** Template CSS **********/
 :root {
     --primary: #a1c9ad;
+    --primary-subtle: #2e3b32;
+    --bs-primary: #a1c9ad;
     --light: #F3F6F9;
     --dark: #191C24;
+    --ac-ark: #f8db28;
+    --ac-culator: #42b747;
 }
 
 .back-to-top {
