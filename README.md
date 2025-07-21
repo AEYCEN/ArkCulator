@@ -15,6 +15,7 @@
 
 <p style="font-size: 17px">Structure destruction calculator for Ark: Survival Evolved and Ark: Survival Ascended.</p>
 
+
 # 💪🏼 Features
 
 Some of the features the calculator provides are:
