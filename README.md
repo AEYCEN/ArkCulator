@@ -38,11 +38,15 @@ ArkCulator Online is the web version of ArkCulator. It is hosted on GitHub Pages
 
 - [aeycen.github.io/ArkCulator](https://aeycen.github.io/ArkCulator/)
 
-The current ArkCulator Online version is `web-v1.0 (17.07.2025)`
+The current ArkCulator Online version is `web-v1.1 (21.07.2025)`
 
 ### 📑 Changelog
 
-    web-v1.0    - initial release
+    21.07.2025 | web-v1.1  - update result on number input
+                           - limit health & quality input
+                           - bug fixes
+
+    17.07.2025 | web-v1.0  - initial release
 
 
 # 📟 ArkCulator
@@ -162,35 +166,35 @@ Notice that you will be prompted by the Defender SmartScreen again the first tim
 
 ### 📑 Changelog
 
-    v5.3    - added new weapon type: tek grenade
-            - support for every tek rifle quality
-            - integrated Beginners Next Gen mode
-            - added ability to answer with weapon name instead of just number
-            - increased max stucture HP input to 250'000
+    15.07.2025 | v5.3   - added new weapon type: tek grenade
+                        - support for every tek rifle quality
+                        - integrated Beginners Next Gen mode
+                        - added ability to answer with weapon name instead of just number
+                        - increased max stucture HP input to 250'000
    
-    v5.2    - finished executable release
-            - styling improvements
-            - added tek rifle element cost calculation
-            - added auto-reset after calculation
-            - added individual ammo translations
+    11.07.2025 | v5.2   - finished executable release
+                        - styling improvements
+                        - added tek rifle element cost calculation
+                        - added auto-reset after calculation
+                        - added individual ammo translations
 
-    v5.1    - added input validations
-            - bug fixes
-            - added bng (Beginners Next Gen) version
+    09.07.2025 | v5.1   - added input validations
+                        - bug fixes
+                        - added bng (Beginners Next Gen) version
 
-    v5.0    - added text coloration and display of user input history
-            - user input process simplified
+    09.03.2024 | v5.0   - added text coloration and display of user input history
+                        - user input process simplified
 
-    v4.1    - added branding and description
+    15.10.2023 | v4.1   - added branding and description
 
-    v4.0    - code cleanup
-            - code efficiency increased
+    14.10.2023 | v4.0   - code cleanup
+                        - code efficiency increased
 
-    v3.0    - changed user input process
+    26.08.2022 | v3.0   - changed user input process
 
-    v2.0    - added new weapon types: cannon, grenade and catapult 
+    29.07.2022 | v2.0   - added new weapon types: cannon, grenade and catapult 
 
-    v1.0    - initial c++ console application release
+    28.07.2022 | v1.0   - initial c++ console application release
 
 
 # 💫 Contact

@@ -57,17 +57,25 @@ const craftingCosts = {
 }
 
 function calculate() {
-    // Calculation
     const weapon = document.querySelector('input[name="weapon"]:checked').value
     const structure = document.querySelector('input[name="structureType"]:checked').value
-    const hp = parseFloat(document.getElementById('structure-hp').value) || 0
+    let hp = parseFloat(document.getElementById('structure-hp').value) || 0
     const cave = document.querySelector('input[name="caveDamage"]:checked').value === "caveDamageYes"
     let quality = parseFloat(document.getElementById('tek-rifle-quality').value) || 100
+
+    // Overwrite max hp input
+    if (hp > 99999999) {
+        hp = 99999999
+        document.getElementById('structure-hp').value = hp
+    }
 
     let damage = damageTable[weapon][structure]
     if (weapon === "tekRifle") {
         if (quality < 100) quality = 100
-        if (quality > 200) quality = 200
+        if (quality > 200) {
+            quality = 200
+            document.getElementById('tek-rifle-quality').value = quality
+        }
         damage *= quality / 100.0
     }
 
@@ -102,8 +110,7 @@ function calculate() {
     let costAmount = weapon === 'tekGrenade' ? Math.ceil(amount / 3) : amount
     const result = {}
     for (const [res, val] of Object.entries(cost)) {
-        const key = res.replace(/([A-Z])/g, '-$1').toLowerCase()
-        result[key] = Math.ceil(val * (res === "element" ? costAmount : costAmount))
+        result[res] = Math.ceil(val * costAmount)
     }
 
     // Output
@@ -116,8 +123,8 @@ function calculate() {
 
 function updateResourceOutput(resourceMap) {
     const resourceIds = [
-        'cementing-paste', 'crystal', 'electronics', 'element', 'fiber',
-        'gunpowder', 'hide', 'metal-ingot', 'obsidian', 'oil',
+        'cementingPaste', 'crystal', 'electronics', 'element', 'fiber',
+        'gunpowder', 'hide', 'metalIngot', 'obsidian', 'oil',
         'polymer', 'stone'
     ]
 
@@ -158,7 +165,7 @@ document.querySelectorAll('input[name="weapon"]').forEach((el) => {
 
 // Call calculate
 document.querySelectorAll('input').forEach((el) => {
-    el.addEventListener("change", calculate)
+    el.addEventListener("input", calculate)
 })
 
 calculate()
