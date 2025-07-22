@@ -115,9 +115,10 @@ function update() {
 
     // HP input validation
     let hp = parseFloat(document.getElementById('structure-hp').value) || 0
-    if (hp > 99999999) hp = 99999999
-    if (hp <= 0) hp = 1
-    document.getElementById('structure-hp').value = hp
+    if (hp > 99999999) {
+        hp = 99999999
+        document.getElementById('structure-hp').value = hp
+    }
 
     // Quality input validation
     let quality = parseFloat(document.getElementById('tek-rifle-quality').value) || 100
