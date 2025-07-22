@@ -58,51 +58,51 @@ const craftingCosts = {
 
 const resources = {
     cementingPaste: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Cementing_Paste'
     }),
     crystal: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Crystal'
     }),
     electronics: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Electronics'
     }),
     element: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Element'
     }),
     fiber: (bng) => ({
-        stackSize: bng ? 999999999 : 300,
+        stackSize: bng ? 300 : 300,
         wikiUrl: 'https://ark.wiki.gg/wiki/Fiber'
     }),
     gunpowder: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Gunpowder'
     }),
     hide: (bng) => ({
-        stackSize: bng ? 999999999 : 200,
+        stackSize: bng ? 200 : 200,
         wikiUrl: 'https://ark.wiki.gg/wiki/Hide'
     }),
     metalIngot: (bng) => ({
-        stackSize: bng ? 999999999 : 300,
+        stackSize: bng ? 300 : 300,
         wikiUrl: 'https://ark.wiki.gg/wiki/Metal_Ingot'
     }),
     obsidian: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Obsidian'
     }),
     oil: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Oil'
     }),
     polymer: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Polymer'
     }),
     stone: (bng) => ({
-        stackSize: bng ? 999999999 : 100,
+        stackSize: bng ? 100 : 100,
         wikiUrl: 'https://ark.wiki.gg/wiki/Stone'
     }),
 }
