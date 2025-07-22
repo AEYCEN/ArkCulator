@@ -39,13 +39,16 @@ ArkCulator Online is the web version of ArkCulator. It is hosted on GitHub Pages
 
 - [aeycen.github.io/ArkCulator](https://aeycen.github.io/ArkCulator/)
 
-The current ArkCulator Online version is `web-v1.1 (21.07.2025)`
+The current ArkCulator Online version is `web-v1.1 (22.07.2025)`
 
 ### 📑 Changelog
 
-    21.07.2025 | web-v1.1  - update result on number input
-                           - limit health & quality input
-                           - bug fixes
+    22.07.2025 | web-v1.1  - added resource stack amount calculation
+                           - added updating of result on number input
+                           - added help texts and wiki redirects
+                           - adjusted styling
+                           - limited HP & quality number input
+                           - fixed 'metalIngot & cementingPaste not showing' bug
 
     17.07.2025 | web-v1.0  - initial release
 

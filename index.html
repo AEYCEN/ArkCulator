@@ -32,20 +32,23 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand bg-body-tertiary navbar-dark sticky-top py-0 mb-4 text-center">
         <div class="container-xxl">
-            <a href="index.html" class="navbar-brand d-flex align-items-center mx-3 my-1 text-nowrap">
-                <img src="img/ArkCulator-standalone.png" alt="AC" width="40" class="me-3">
-                <div class="d-flex align-items-baseline">
+            <div class="navbar-brand d-flex align-items-center cursor-pointer mx-3 my-1 text-nowrap">
+                <img src="img/ArkCulator-standalone.png" alt="AC" width="40" class="me-3" onclick="document.location.reload(true)">
+                <div class="d-flex align-items-baseline" onclick="document.location.reload(true)">
                     <span class="fs-3 fw-bold pe-2">
                         <span style="color: var(--ac-ark);">Ark</span><span style="color: var(--ac-culator);">Culator</span> Online
                     </span>
-                <span class="text-secondary small align-baseline ps-2">by AEYCEN</span>
+                <span class="text-secondary small align-baseline ps-2" onclick="window.open('https://github.com/AEYCEN')">by AEYCEN</span>
                 </div>
-            </a>
+            </div>
             <button type="button" class="btn btn-outline-primary m-2" onclick="window.open('https://github.com/AEYCEN/ArkCulator/releases')">
                 <i class="fab fa-github fa-fw me-1"></i>
                 Download ArkCulator v5.3
             </button>
-            <span class="text-secondary">web-v1.1 (21.07.2025)</span>
+            <span class="text-secondary cursor-help" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                  data-bs-title="<span class='fw-bold'>Update history:</span><br>web-v1.0 - 17.07.2025">
+                web-v1.1 (22.07.2025)
+            </span>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -62,58 +65,58 @@
         <div class="w-100">
             <!-- Weapon Start -->
             <div class="card bg-secondary-subtle border-0 p-4 mb-3">
-                <div class="row g-4">
-                    <div class="col-auto">
+                <div class="row g-3 text-center">
+                    <div class="col">
                         <input type="radio" name="weapon" id="weapon-c4" value="c4" checked>
-                        <label for="weapon-c4" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                        <label for="weapon-c4" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer h-100">
                             <img src="img/weapon/228px-C4_Charge.webp" class="img-fluid mb-3 img-weapon" alt="C4">
                             <p class="m-0 fs-5">C4</p>
                         </label>
                     </div>
-                    <div class="col-auto">
+                    <div class="col">
                         <input type="radio" name="weapon" id="weapon-cannon" value="cannon">
-                        <label for="weapon-cannon" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                        <label for="weapon-cannon" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer h-100">
                             <img src="img/weapon/228px-Cannon.webp" class="img-fluid mb-3 img-weapon" alt="Cannon">
                             <p class="m-0 fs-5">Cannon</p>
                         </label>
                     </div>
-                    <div class="col-auto">
+                    <div class="col">
                         <input type="radio" name="weapon" id="weapon-catapult" value="catapult">
-                        <label for="weapon-catapult" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                        <label for="weapon-catapult" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer h-100">
                             <img src="img/weapon/228px-Catapult_Turret.webp" class="img-fluid mb-3 img-weapon" alt="Catapult">
                             <p class="m-0 fs-5">Catapult</p>
                         </label>
                     </div>
-                    <div class="col-auto">
+                    <div class="col">
                         <input type="radio" name="weapon" id="weapon-grenade" value="grenade">
-                        <label for="weapon-grenade" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                        <label for="weapon-grenade" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer h-100">
                             <img src="img/weapon/228px-Grenade.webp" class="img-fluid mb-3 img-weapon" alt="Grenade">
                             <p class="m-0 fs-5">Grenade</p>
                         </label>
                     </div>
                     <div class="col-auto bng-hide">
                         <input type="radio" name="weapon" id="weapon-rocket-launcher" value="rocketLauncher">
-                        <label for="weapon-rocket-launcher" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                        <label for="weapon-rocket-launcher" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer h-100">
                             <img src="img/weapon/228px-Rocket_Launcher.webp" class="img-fluid mb-3 img-weapon" alt="Rocket Launcher">
                             <p class="m-0 fs-5">Rocket Launcher</p>
                         </label>
                     </div>
-                    <div class="col-auto bng-hide">
+                    <div class="col bng-hide">
                         <input type="radio" name="weapon" id="weapon-tek-grenade" value="tekGrenade">
-                        <label for="weapon-tek-grenade" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer">
+                        <label for="weapon-tek-grenade" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer h-100">
                             <img src="img/weapon/228px-Tek_Grenade.webp" class="img-fluid mb-3 img-weapon" alt="Tek Grenade">
                             <p class="m-0 fs-5">Tek Grenade</p>
                         </label>
                     </div>
-                    <div class="col-auto bng-hide">
+                    <div class="col bng-hide">
                         <input type="radio" name="weapon" id="weapon-tek-rifle" value="tekRifle">
-                        <label for="weapon-tek-rifle" class="card radio-card cursor-pointer" style="height: 198px">
-                            <div class="d-flex align-items-center flex-column p-4 pb-1">
+                        <label for="weapon-tek-rifle" class="card radio-card cursor-pointer h-100">
+                            <div class="d-flex align-items-center flex-column p-3 pb-1">
                                 <img src="img/weapon/228px-Tek_Rifle.webp" class="img-fluid mb-3 img-weapon" alt="Tek Rifle">
                                 <p class="m-0 fs-5 pb-3" id="tek-rifle-label">Tek Rifle</p>
                             </div>
-                            <div class="input-group" id="tek-rifle-quality-group" style="display: none; width: 151px !important; height: 50px !important;">
-                                <input type="number" class="form-control" aria-describedby="percent-addon" id="tek-rifle-quality" value="100.0">
+                            <div class="input-group" id="tek-rifle-quality-group" style="display: none; width: 100% !important; height: 46px !important;">
+                                <input type="number" class="form-control" aria-describedby="percent-addon" id="tek-rifle-quality" value="100.0" min="100" max="200">
                                 <span class="input-group-text" id="percent-addon">%</span>
                             </div>
                         </label>
@@ -124,31 +127,31 @@
 
             <!-- Structure type Start -->
             <div class="card bg-secondary-subtle border-0 p-4 mb-3">
-                <div class="row g-4">
+                <div class="row g-3">
                     <div class="col-sm-6 col-xl-3">
                         <input type="radio" name="structureType" id="structure-type-wood" value="wood">
-                        <label for="structure-type-wood" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                        <label for="structure-type-wood" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer w-100">
                             <img src="img/structure/228px-Wooden_Foundation.webp" class="img-fluid mb-3" width="100" alt="Wood">
                             <p class="m-0 fs-5">Wood</p>
                         </label>
                     </div>
                     <div class="col-sm-6 col-xl-3">
                         <input type="radio" name="structureType" id="structure-type-stone" value="stone">
-                        <label for="structure-type-stone" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                        <label for="structure-type-stone" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer w-100">
                             <img src="img/structure/228px-Stone_Foundation.webp" class="img-fluid mb-3" width="100" alt="Stone">
                             <p class="m-0 fs-5">Stone</p>
                         </label>
                     </div>
                     <div class="col-sm-6 col-xl-3">
                         <input type="radio" name="structureType" id="structure-type-metal" value="metal" checked>
-                        <label for="structure-type-metal" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                        <label for="structure-type-metal" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer w-100">
                             <img src="img/structure/228px-Metal_Foundation.webp" class="img-fluid mb-3" width="100" alt="Metal">
                             <p class="m-0 fs-5">Metal</p>
                         </label>
                     </div>
                     <div class="col-sm-6 col-xl-3">
                         <input type="radio" name="structureType" id="structure-type-tek" value="tek">
-                        <label for="structure-type-tek" class="card radio-card d-flex align-items-center flex-column p-4 cursor-pointer w-100">
+                        <label for="structure-type-tek" class="card radio-card d-flex align-items-center flex-column p-3 cursor-pointer w-100">
                             <img src="img/structure/228px-Tek_Foundation.webp" class="img-fluid mb-3" width="100" alt="Tek">
                             <p class="m-0 fs-5">Tek</p>
                         </label>
@@ -160,25 +163,29 @@
             <!-- HP / Cave Start -->
             <div class="row g-4">
                 <!-- Structure HP -->
-                <div class="col-6">
+                <div class="col-sm-12 col-xl-6">
                     <div class="card bg-secondary-subtle border-0 p-4 mb-3">
                         <div class="card p-4">
                             <div class="d-flex align-items-center gap-4">
                                 <img src="img/80px-Health.webp" class="img-fluid mx-4" width="60" alt="Wood">
-                                <label for="structure-hp" class="form-label text-nowrap mb-0 fs-5 me-4">Structure HP</label>
-                                <input type="number" class="form-control form-control-lg flex-grow-1" id="structure-hp" value="10000" max="99999999">
+                                <label for="structure-hp" class="form-label cursor-help text-nowrap mb-0 fs-5 me-4" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="How much HP has the structure you want to destroy?">
+                                    Structure HP
+                                </label>
+                                <input type="number" class="form-control form-control-lg flex-grow-1" id="structure-hp" value="10000" min="1" max="99999999">
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Cave Damage -->
-                <div class="col-6">
+                <div class="col-sm-12 col-xl-6">
                     <div class="card bg-secondary-subtle border-0 p-4 mb-3">
                         <div class="card p-4">
                             <div class="d-flex align-items-center gap-4">
                                 <img src="img/cave.png" class="img-fluid mx-4" width="60" alt="Cave">
-                                <span class="fs-5 mb-0 me-4">Inside of cave?</span>
+                                <span class="fs-5 cursor-help mb-0 me-4" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Is the structure in range of the 6x cave damage multiplier?">
+                                    Inside of cave?
+                                </span>
 
                                 <div class="d-flex gap-2">
                                     <input type="radio" id="cave-damage-yes" name="caveDamage" value="caveDamageYes" class="d-none">
@@ -202,7 +209,7 @@
 
             <!-- OUTPUT Start -->
             <div class="card p-4 bg-primary-subtle">
-                <div class="row gap-4">
+                <div class="row gap-3">
                     <div class="col-2">
                         <div id="output-amount-group">
                             <div class="d-flex align-items-center flex-column gap-1">
@@ -216,65 +223,77 @@
                         <img src="img/228px-Spoiled_Meat.webp" class="img-fluid mx-auto" id="output-amount-indestructible" width="122" style="display: none;" alt="Indestructible">
                     </div>
                     <div class="col-auto pe-1" style="border-left: 1px solid var(--bs-border-color);"></div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-cementingPaste">
-                        <img src="img/resource/228px-Cementing_Paste.webp" class="img-fluid cursor-help mx-1" width="70" alt="Cementing Paste"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-cementingPaste">
+                        <img src="img/resource/228px-Cementing_Paste.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Cementing Paste"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Cementing Paste">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-crystal">
-                        <img src="img/resource/228px-Crystal.webp" class="img-fluid cursor-help mx-1" width="70" alt="Crystal"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-crystal">
+                        <img src="img/resource/228px-Crystal.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Crystal"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Crystal">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-electronics">
-                        <img src="img/resource/228px-Electronics.webp" class="img-fluid cursor-help mx-1" width="70" alt="Electronics"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-electronics">
+                        <img src="img/resource/228px-Electronics.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Electronics"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Electronics">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-element">
-                        <img src="img/resource/228px-Element.webp" class="img-fluid cursor-help mx-1" width="70" alt="Element"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-element">
+                        <img src="img/resource/228px-Element.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Element"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Element">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-fiber">
-                        <img src="img/resource/228px-Fiber.webp" class="img-fluid cursor-help mx-1" width="70" alt="Fiber"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-fiber">
+                        <img src="img/resource/228px-Fiber.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Fiber"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Fiber">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-gunpowder">
-                        <img src="img/resource/228px-Gunpowder.webp" class="img-fluid cursor-help mx-1" width="70" alt="Gunpowder"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-gunpowder">
+                        <img src="img/resource/228px-Gunpowder.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Gunpowder"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Gunpowder">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-hide">
-                        <img src="img/resource/228px-Hide.webp" class="img-fluid cursor-help mx-1" width="70" alt="Hide"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-hide">
+                        <img src="img/resource/228px-Hide.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Hide"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Hide">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-metalIngot">
-                        <img src="img/resource/228px-Metal_Ingot.webp" class="img-fluid cursor-help mx-1" width="70" alt="Metal Ingot"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-metalIngot">
+                        <img src="img/resource/228px-Metal_Ingot.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Metal Ingot"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Metal Ingot">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-obsidian">
-                        <img src="img/resource/228px-Obsidian.webp" class="img-fluid cursor-help mx-1" width="70" alt="Obsidian"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-obsidian">
+                        <img src="img/resource/228px-Obsidian.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Obsidian"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Obsidian">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-oil">
-                        <img src="img/resource/228px-Oil.webp" class="img-fluid cursor-help mx-1" width="70" alt="Oil"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-oil">
+                        <img src="img/resource/228px-Oil.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Oil"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Oil">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-polymer">
-                        <img src="img/resource/228px-Polymer.webp" class="img-fluid cursor-help mx-1" width="70" alt="Polymer"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-polymer">
+                        <img src="img/resource/228px-Polymer.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Polymer"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="(Organic) Polymer">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
-                    <div class="col-auto d-flex align-items-center flex-column gap-3" id="resource-stone">
-                        <img src="img/resource/228px-Stone.webp" class="img-fluid cursor-help mx-1" width="70" alt="Stone"
+                    <div class="col-auto d-flex align-items-center flex-column" id="resource-stone">
+                        <img src="img/resource/228px-Stone.webp" class="img-fluid cursor-pointer mx-1 mb-3" width="70" alt="Stone"
                              data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Stone">
-                        <h3 class="mb-0">3</h3>
+                        <h3 class="mb-1">3</h3>
+                        <p class="my-0 text-muted"></p>
                     </div>
                     <div class="col-auto ps-5 align-self-center" id="resource-indestructible" style="display: none;">
                         <h4>The selected structure type is indestructible with this weapon :(</h4>
@@ -288,7 +307,7 @@
                 <div class="form-check form-switch mt-3">
                     <input class="form-check-input" type="checkbox" value="bngMode" id="bng-mode" switch>
                     <label class="form-check-label" for="bng-mode">
-                        <i>Beginners Next Gen</i> server settings
+                        <i class="cursor-pointer" onclick="window.open('https://discord.gg/bMrFaXV3QY')">Beginners Next Gen</i> server settings
                     </label>
                 </div>
             </div>

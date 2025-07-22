@@ -23,7 +23,10 @@ input[type="radio"] {
 }
 
 .img-weapon {
-    width: 101px;
+    max-width: 100px;
+    min-width: 85px;
+    width: 100%;
+    height: auto;
 }
 
 a {
@@ -33,4 +36,23 @@ a {
 
 a:hover {
     color: var(--primary-subtle);
+}
+
+@media (max-width: 576px) {
+    .img-weapon {
+        max-width: 80px;
+    }
+
+    .radio-card {
+        padding: 1rem;
+    }
+
+    .navbar-brand span.fs-3 {
+        font-size: 1.2rem !important;
+    }
+
+    .form-control-lg {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }
