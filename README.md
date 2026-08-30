@@ -5,7 +5,7 @@
     </picture>
     <br>
     <br>
-    <b style="font-size: 16px">© 2022-2025 by AEYCEN / TRAYVED</b>
+    <b style="font-size: 16px">© 2022-2026 by AEYCEN / TRAYVED</b>
     <br>
     Better calc than guess.
     <br>
@@ -31,13 +31,14 @@ Some of the features the calculator provides are:
 
 # 🌐 ArkCulator Online
 
-![Website](https://img.shields.io/website?url=https%3A%2F%2Faeycen.github.io%2FArkCulator%2F)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Farkculator.aeycen.dev%2F)
+![Tech Stack](https://img.shields.io/badge/language-JavaScript-yellow)
 ![GitHub License](https://img.shields.io/github/license/AEYCEN/arkCulator)
 
 
 ArkCulator Online is the web version of ArkCulator. It is hosted on GitHub Pages and can be directly accessed via:
 
-- [aeycen.github.io/ArkCulator](https://aeycen.github.io/ArkCulator/)
+- [arkculator.aeycen.dev](https://arkculator.aeycen.dev/)
 
 The current ArkCulator Online version is `web-v1.1 (22.07.2025)`
 
@@ -57,6 +58,7 @@ The current ArkCulator Online version is `web-v1.1 (22.07.2025)`
 
 ![GitHub Release](https://img.shields.io/github/v/release/AEYCEN/arkCulator)
 ![GitHub Downloads (all releases)](https://img.shields.io/github/downloads/AEYCEN/ArkCulator/total)
+![Tech Stack](https://img.shields.io/badge/language-C++-f34b7d)
 ![GitHub License](https://img.shields.io/github/license/AEYCEN/arkCulator)
 
 
